@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+        <settings>
+            <!-- 开启驼峰映射 ，为自定义的SQL语句服务-->
+            <!--设置启用数据库字段下划线映射到java对象的驼峰式命名属性，默认为false-->
+            <setting name="mapUnderscoreToCamelCase" value="true"/>
+            <!-- 全局映射器启用缓存 -->
+            <setting name="cacheEnabled" value="true" />
+            <!-- 设置触发延迟加载的方法-->
+            <setting name="lazyLoadTriggerMethods" value="get"/>
+            <!-- 查询时,关闭关联对象及时加载以提高性能-->
+            <setting name="lazyLoadingEnabled" value="true" />
+            <!-- [当对象使用延迟加载时 属性的加载取决于能被引用到的那些延迟属性,否则,按需加载(需要的是时候才去加载)]-->
+            <setting name="aggressiveLazyLoading" value="true"/>
+            <!-- 打印查询语句 -->
+            <setting name="logImpl" value="STDOUT_LOGGING" />
+
+        </settings>
+
+</configuration>

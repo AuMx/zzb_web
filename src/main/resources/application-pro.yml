@@ -1,0 +1,48 @@
+
+########################################################
+###datasource
+########################################################
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.1.8.248:3330/xfpaydb?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=UTF-8&useSSL=false
+    username: xfpay
+    password: dBZJtVX#a3Nn
+    # Hikari
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      minimum-idle: 10
+      maximum-pool-size: 20
+      # 控制从池返回的连接的默认自动提交行为
+      auto-commit: true
+      # 闲置回收时间 毫秒
+      idle-timeout: 60000
+      pool-name: DatebookHikariCP
+      # 连接的最大生存期 毫秒
+      max-lifetime: 1800000
+      # 获取连接超时 毫秒
+      connection-timeout: 30000
+      connection-test-query: SELECT 1
+  thymeleaf:
+    #配置模板路径，默认是templates
+    prefix: classpath:/templates/
+    #文件后缀
+    suffix: .html
+    #编码
+    encoding: UTF-8
+    #内容类别
+    content-type: text/html
+    #模板的模式，支持 HTML, XML TEXT JAVASCRIPT
+    mode: HTML
+    #开发时建议设置为false，否则会有缓存，导致页面没法及时看到更新后的效果。
+    cache: false
+
+
+########################################################
+### mybatis
+########################################################
+mybatis:
+  config-location: classpath:mybatis/mybatis-config.xml
+  mapper-locations: classpath:mybatis/mapper/**/*Dao.xml
+
+

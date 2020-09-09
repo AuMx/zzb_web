@@ -1,0 +1,25 @@
+server:
+  tomcat:
+    uri-encoding: utf-8
+  port: 8090
+  servlet:
+    context-path: /zzb
+
+spring:
+  profiles:
+    #active: @profileActive@
+    active: dev
+
+
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+
+logging:
+  config: classpath:logback-spring.xml
+
+#雪花算法分布式全局ID生成器：machineId:机器ID；workerId:数据中心ID；
+#值不能超过32 [0-31] ; 满足最多1024个服务节点
+snowFlake:
+  machineId: 0
+  workerId: 0
